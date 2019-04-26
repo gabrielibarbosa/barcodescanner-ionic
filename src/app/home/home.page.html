@@ -1,14 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Teste Barcode Scanner
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+      <div>
+        <ion-input type="text" [(ngModel)]="encondText"></ion-input>
+        <ion-button color="primary" (click)="encode()"  expand="block"> <ion-icon name="color-wand"></ion-icon> Encode</ion-button>
+
+      </div>
+      <div>
+        <ion-button color="primary" (click)="scan()" expand="block">
+           <ion-icon name="barcode"></ion-icon>   
+            Scan
+          </ion-button>
+      </div>  
   </div>
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-title>TOTVS - Logística</ion-title>
+    </ion-toolbar>
+  </ion-footer>

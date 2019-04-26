@@ -1,5 +1,7 @@
 {
   "name": "testebarras",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

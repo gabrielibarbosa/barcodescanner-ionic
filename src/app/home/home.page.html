@@ -5,14 +5,12 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <div class="ion-padding">
-      <div>
-        <ion-input type="text" [(ngModel)]="encondText"></ion-input>
+      <!-- <div>
+        <ion-input type="text" [(ngModel)]="encodeText"></ion-input>
         <ion-button color="primary" (click)="encode()"  expand="block"> <ion-icon name="color-wand"></ion-icon> Encode</ion-button>
-
-      </div>
+      </div> -->
       <div>
         <ion-button color="primary" (click)="scan()" expand="block">
            <ion-icon name="barcode"></ion-icon>   
@@ -22,7 +20,7 @@
   </div>
 </ion-content>
 <ion-footer>
-    <ion-toolbar>
+    <ion-toolbar text-sm-center text-md-center text-lg-center>
       <ion-title>TOTVS - Logística</ion-title>
     </ion-toolbar>
   </ion-footer>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,17 @@ export class HomePage {
   encodedData: any={};
   scannedData: any={};
 
-  constructor(private scanner: BarcodeScanner) { }
+  constructor(private scanner: BarcodeScanner, private alertController: AlertController) { }
+
+  async presentAlert(message) {
+    const alert = await this.alertController.create({
+      header: 'Capturado',
+      message: message ,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 
   scan(){
     this.options={
@@ -20,7 +31,7 @@ export class HomePage {
     }
     this.scanner.scan().then(data => {
       this.scannedData = data;
-       alert(data);
+      this.presentAlert(data.text);
      }).catch(err => {
          console.log('Error', err);
      });
